@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.$py.class
+
+# Ambientes virtuais
+venv/
+ecommerce_venv/
+env/
+.env
+
+# Arquivos de IDE
+.vscode/
+.idea/
+
+# Logs e arquivos temporários do DBT
+dbt_project/logs/
+dbt_project/target/
+dbt_project/dbt_packages/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Chaves de Service Account e configurações sensíveis (NUNCA COMMITAR!)
+*.json
+./config/proj-ecommerce-461723-b025c48c95af.json
+dbt_project/profiles.yml 
+
+# Notebooks checkpoints
+.ipynb_checkpoints
+
+# Outros
+*.log
+*.tmp
+*.swp
