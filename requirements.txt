@@ -1,0 +1,7 @@
+apache-airflow
+pyspark
+dbt-bigquery
+google-cloud-storage
+google-cloud-bigquery
+pandas
+astro-run-dag 
