@@ -2,6 +2,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType, TimestampType
 import json
 import re
+import os
 
 type_mapping = {
     "string": StringType(),
@@ -9,6 +10,7 @@ type_mapping = {
     "double": DoubleType(),
     "timestamp": TimestampType()
 }
+
 def load_schema_from_json(json_path):
     with open(json_path, "r") as f:
         schema_json = json.load(f)
@@ -72,8 +74,8 @@ def main():
         },
     }
 
-    gcs_bronze_bucket = "gs://gcs-ecommerce-bucket-bronze"
-
+    gcs_bronze_bucket = os.getenv("GCS_BRONZE_BUCKET")
+    
     for name, info in datasets_info.items():
         print(f"Processando dataset: {name}")
 

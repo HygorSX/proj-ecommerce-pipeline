@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: 'raw_ecommerce'
+    description: 'Dados brutos de vendas do e-commerce do Olist.'
+    database: "proj-ecommerce-461723"
+    schema: "ecommerce_raw"
+    tables:
+      - name: "orders"
+      - name: "products"
+      - name: "customers"
+      - name: "order_items"
+      - name: "order_payments"
+      - name: "product_category_translation"
