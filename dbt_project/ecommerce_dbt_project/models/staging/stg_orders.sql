@@ -1,14 +1,16 @@
-with source_orders as (
-    select
+WITH source_orders AS (
+    SELECT
         order_id,
         customer_id,
         order_status,
-        cast(order_purchase_timestamp as timestamp) as order_purchase_timestamp,
-        cast(order_approved_at as timestamp) as order_approved_at,
-        cast(order_delivered_carrier_date as timestamp) as order_delivered_carrier_date,
-        cast(order_delivered_customer_date as timestamp) as order_delivered_customer_date,
-        cast(order_estimated_delivery_date as timestamp) as order_estimated_delivery_date
-    from {{ source('raw_ecommerce', 'orders') }}
+
+        CAST(order_purchase_timestamp AS TIMESTAMP) AS order_purchase_timestamp,
+        CAST(order_approved_at AS TIMESTAMP) AS order_approved_at,
+        CAST(order_delivered_carrier_date AS TIMESTAMP) AS order_delivered_carrier_date,
+        CAST(order_delivered_customer_date AS TIMESTAMP) AS order_delivered_customer_date,
+        CAST(order_estimated_delivery_date AS TIMESTAMP) AS order_estimated_delivery_date
+        
+    FROM {{ source('raw_ecommerce', 'orders') }}
 )
-select * from source_orders
-where order_purchase_timestamp is not null
+SELECT * FROM source_orders
+WHERE order_purchase_timestamp IS NOT NULL
