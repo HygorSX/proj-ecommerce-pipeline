@@ -11,4 +11,7 @@ sources:
       - name: "customers"
       - name: "order_items"
       - name: "order_payments"
-      - name: "product_category_translation"
+      - name: "order_reviews"
+      - name: "sellers"
+      - name: "geolocation"
+      - name: "product_category"
